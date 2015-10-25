@@ -1,0 +1,1 @@
+rawTable = "test.stock"
