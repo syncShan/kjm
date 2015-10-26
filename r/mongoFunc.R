@@ -1,5 +1,6 @@
-library(rmongodb)
-library(rjson)
+#require
+#library(rmongodb)
+#library(rjson)
 
 mdb = mongo.create()
 
@@ -32,4 +33,49 @@ insertIntoDB = function(mongodb,table,df){
     }
   }
   print(paste(count,"/",nrow(df)," rows inserted",sep=""))
+}
+
+#market =SH SZ
+updateSingle = function(id,startDate,endDate,mongodb,tableName){
+  if(!mongo.is.connected(mongodb)){
+    print("mongo connection is already closed!")
+    return()
+  }
+  if(as.integer(id) >=600000){
+    market = "SS"
+  }else{
+    market = "SZ"
+  }
+  sid = paste(id,".",market,sep="")
+  cat(paste("getting...",sid,sep=" "))
+  sDate = as.Date(startDate,"%Y%m%d")
+  eDate = as.Date(endDate,"%Y%m%d")
+  input = try(getSymbols(sid,from = sDate,to=eDate,auto.assign = FALSE))
+  if(is.null(nrow(input)) ) return()
+  adjusted = adjustOHLC(input,symbol.name = sid)
+  stockData = data.frame(adjusted)
+  colnames(stockData) = yahooSchema
+  stockData$Date = rownames(stockData)
+  stockData$id = id
+  stockData = stockData[stockData$Volume > 0,]
+  if(nrow(stockData) == 0){
+    print(paste("[ERROR] cannot find data for id:",id,sep=""))
+    return()
+  }else{
+    #data entry check
+    days = as.Date(stockData[nrow(stockData),"Date"],"%Y-%m-%d") - as.Date(stockData[1,"Date"],"%Y-%m-%d")
+    if(nrow(stockData) < days*2/3){
+      print(paste("[WARNING] id:",id," seems don't have enough data:",nrow(stockData),". Please check!",sep=""))
+    }else{
+      cat(paste(nrow(stockData)," inserted!\n"))
+    }
+  }
+  for( i in seq(1,nrow(stockData))){
+    if(stockData[i,"Volume"] == 0 ) next
+    json = toJSON(stockData[i,])
+    bson = mongo.bson.from.JSON(json)
+    if(!mongo.insert(mongodb,tableName,bson)){
+      print(paste("failed to insert:",json))
+    }
+  }
 }
