@@ -2,11 +2,23 @@
 #library(rmongodb)
 #library(rjson)
 
-mdb = mongo.create()
+mongodb = mongo.create()
 
 getStockDFFromDB=function(mongodb,table,id){
+  id = as.integer(id)
   buf <- mongo.bson.buffer.create()
   mongo.bson.buffer.append(buf,"id", id)
+  query <- mongo.bson.from.buffer(buf)
+  cur <- mongo.find(mongodb, table, query = query)
+  df = mongo.cursor.to.data.frame(cur)
+  df$Date  = as.Date(df$Date,format= "%Y-%m-%d")
+  df = subset(df,df$Volume>0)
+  return(df)
+}
+
+getStockDFFromDBByDate=function(mongodb,table,date){
+  buf <- mongo.bson.buffer.create()
+  mongo.bson.buffer.append(buf,"Date", date)
   query <- mongo.bson.from.buffer(buf)
   cur <- mongo.find(mongodb, table, query = query)
   df = mongo.cursor.to.data.frame(cur)
@@ -36,7 +48,8 @@ insertIntoDB = function(mongodb,table,df){
 }
 
 #market =SH SZ
-updateSingle = function(id,startDate,endDate,mongodb,tableName){
+#id could be interger or string
+updateSingleStock = function(id,startDate,endDate,mongodb,tableName){
   if(!mongo.is.connected(mongodb)){
     print("mongo connection is already closed!")
     return()
@@ -46,17 +59,21 @@ updateSingle = function(id,startDate,endDate,mongodb,tableName){
   }else{
     market = "SZ"
   }
-  sid = paste(id,".",market,sep="")
+  sid = paste(as.character(id),".",market,sep="")
   cat(paste("getting...",sid,sep=" "))
   sDate = as.Date(startDate,"%Y%m%d")
   eDate = as.Date(endDate,"%Y%m%d")
   input = try(getSymbols(sid,from = sDate,to=eDate,auto.assign = FALSE))
   if(is.null(nrow(input)) ) return()
   adjusted = adjustOHLC(input,symbol.name = sid)
+  if(is.null(ncol(adjusted)) || ncol(adjusted) == 0){
+    print(paste("[ERROR] cannot find data for id:",id,sep=""))
+    return()
+  }
   stockData = data.frame(adjusted)
   colnames(stockData) = yahooSchema
   stockData$Date = rownames(stockData)
-  stockData$id = id
+  stockData$id = as.integer(id)
   stockData = stockData[stockData$Volume > 0,]
   if(nrow(stockData) == 0){
     print(paste("[ERROR] cannot find data for id:",id,sep=""))
@@ -78,4 +95,17 @@ updateSingle = function(id,startDate,endDate,mongodb,tableName){
       print(paste("failed to insert:",json))
     }
   }
+  return(stockData)
+}
+
+removeStockData = function(id,mongodb,tableName){
+  id = as.integer(id)
+  if(!mongo.is.connected(mongodb)){
+    print("mongo connection is already closed!")
+    return()
+  }
+  buf <- mongo.bson.buffer.create()
+  mongo.bson.buffer.append(buf,"id", id)
+  criteria <- mongo.bson.from.buffer(buf)
+  mongo.remove(mongodb,tableName,criteria)
 }

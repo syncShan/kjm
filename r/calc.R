@@ -29,5 +29,7 @@ toStrategyData = function(df,startDate,endDate){
   return(res)
 }
 
-
+buyShare = function(money,N){
+  as.integer(money*0.01/(N*100))
+}
 
