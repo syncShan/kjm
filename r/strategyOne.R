@@ -19,21 +19,47 @@ getSummary = function(newStrategy){
   rank = rank[rank$factor > 0,]
 }
 
-getBuyInPoint = function(id,mongodb){
-  print(id)
-  check = getStockDFFromDB(mongodb,prodTable,id)
-  n = nrow(check)
-  for(i in n:2){
-    if(check[i,"AvgLow"]>check[i,"AvgHigh"] && check[i-1,"AvgLow"]<check[i-1,"AvgHigh"]){
-      print(check[n,])
-      print(check[i-1,])  
-      print(check[i,])
-      break;
+getBuyInPoint = function(idList,newStrategy,lastestDay){
+  df = rbind(lastestDay,newStrategy)
+  ids = as.integer(idList)
+  for(id in ids){
+    sub = df[df$id==id,]
+   
+    if(nrow(sub)<2){
+      print(paste("not enough data for id:",id,sep=""))
+      print(sub)
     }
+    sub$turn = sub$AvgLow > sub$AvgHigh
+    if(sub[2,]$turn && !sub[1,]$turn){
+      sub$share = buyShare(money, sub$N)
+      print(paste("trend found please buy in id:",id," with target share:",sub[2,]$share),sep="")
+      sub$operation=""
+      sub[1,]$operation = "pre day"
+      sub[2,]$operation = "sug buy"
+      print(sub)
+      insertIntoDB(mongodb,operationTable,sub)
+    }
+    print(sub)
   }
 }
 
-checkPeriodInvest = function(idList,mongodb,startDate,endDate)
+getSellPoint = function(){
+  df  = getStockDFFromDB(mongodb,transactionTable,NULL)
+  ids = df$id
+  for(id in ids){
+    single = tail(getStockDFFromDB(mongodb,prodTable,id),49)
+    last = tail(single,4)
+    val1 = sum(single$High)
+    val2 = sum(last$Low)
+    approximateThreshold = single[49,]$AvgHigh * 5 - val2
+    accurateThreshold = val1 - 10*val2
+    print(paste(id,":approximate sell point: if LOW < ",approximateThreshold," then sell out",sep=""))
+    print(paste(id,":accurate sell point: if 10*LOW - HIGH  < ",accurateThreshold," then sell out",sep=""))
+  }
+}
+
+
+checkPeriodInvest = function(idList,mongodb,startDate,endDate){
   examine = data.frame()
   for(id in idList){
     new = getStockDFFromDB(mongodb, prodTable, id)
@@ -99,8 +125,8 @@ checkPeriodInvest = function(idList,mongodb,startDate,endDate)
       stockInHand = stockInHand[stockInHand$id != id,]
     }
   }
-
-  today = getStockDFFromDBByDate(mongodb,prodTable,"2015-10-30")
+  today = getStockDFFromDBByDate(mongodb,prodTable,"2015-11-04")
+  #today = getStockDFFromDBByDate(mongodb,prodTable,endDate)
   marketValue = 0  
   
   for( i in 1:nrow(stockInHand)){
@@ -113,4 +139,5 @@ checkPeriodInvest = function(idList,mongodb,startDate,endDate)
     singleValue = today[which(today$id == id),"Close"]*stockInHand[i,"share"]*100
     marketValue = marketValue + singleValue
   }
-  
+  print(marketValue)
+}

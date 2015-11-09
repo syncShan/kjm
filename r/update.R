@@ -12,17 +12,14 @@ updateRaw = function(idList,startDate,endDate,mongodb){
 
 
 updateStrategyData = function(mongodb,newRaw){
-  #for( col in colnames(newRaw)){
-  #  if(col=="Date") next
-  #  newRaw[,col] = as.numeric(newRaw[,col])
-  #}
   len = nrow(newRaw)
   res = data.frame()
   for(i in (1:len)){
     hisdf = getStockDFFromDB(mongodb,prodTable,newRaw[i,]$id)
     new = newRaw[i,]
     new[,addedSchema]=NA
-    new=new[,-6]
+    new[,"Adjusted"]=0
+    hisdf[,"Adjusted"]=0
     #in here cannot make sure all the history data is enough
     hisdf = rbind(hisdf,new)
     strategyNew = getStrategySingleDay(hisdf,nrow(hisdf))

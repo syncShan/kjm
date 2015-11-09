@@ -1,18 +1,22 @@
+library(rmongodb)
 #require
-#library(rmongodb)
 #library(rjson)
 
 mongodb = mongo.create()
 
 getStockDFFromDB=function(mongodb,table,id){
-  id = as.integer(id)
   buf <- mongo.bson.buffer.create()
-  mongo.bson.buffer.append(buf,"id", id)
+  if(!is.null(id)){
+    id = as.integer(id)
+    mongo.bson.buffer.append(buf,"id", id)
+  }
   query <- mongo.bson.from.buffer(buf)
   cur <- mongo.find(mongodb, table, query = query)
   df = mongo.cursor.to.data.frame(cur)
   df$Date  = as.Date(df$Date,format= "%Y-%m-%d")
-  df = subset(df,df$Volume>0)
+  if(!is.null(df$Volume)){
+    df = subset(df,df$Volume>0)
+  }
   return(df)
 }
 
@@ -22,9 +26,31 @@ getStockDFFromDBByDate=function(mongodb,table,date){
   query <- mongo.bson.from.buffer(buf)
   cur <- mongo.find(mongodb, table, query = query)
   df = mongo.cursor.to.data.frame(cur)
+  if(nrow(df) == 0){
+    print(paste("cannot find data for date:",date,sep=""))
+  }
   df$Date  = as.Date(df$Date,format= "%Y-%m-%d")
   df = subset(df,df$Volume>0)
   return(df)
+}
+
+#date is like 20151103
+getLatestTradingDayBefore=function(mongodb,table,date){
+  i = 10
+  ddt = as.Date(date,"%Y%m%d")
+  while(i > 0){
+    ddt = ddt - 1
+    dateStr = as.character(ddt,"%Y-%m-%d")
+    buf <- mongo.bson.buffer.create()
+    mongo.bson.buffer.append(buf,"Date", dateStr)
+    query <- mongo.bson.from.buffer(buf)
+    cur <- mongo.find(mongodb, table, query = query)
+    df = mongo.cursor.to.data.frame(cur)
+    if(nrow(df) == 0) next
+    df$Date  = as.Date(df$Date,format= "%Y-%m-%d")
+    df = subset(df,df$Volume>0)
+    return(df)
+  }
 }
 
 insertIntoDB = function(mongodb,table,df){
@@ -54,7 +80,7 @@ updateSingleStock = function(id,startDate,endDate,mongodb,tableName){
     print("mongo connection is already closed!")
     return()
   }
-  if(as.integer(id) >=600000){
+  if(as.integer(id) >=500000){
     market = "SS"
   }else{
     market = "SZ"
