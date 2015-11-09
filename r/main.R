@@ -6,7 +6,7 @@ source("r/restore.R")
 source("r/calc.R")
 source("r/update.R")
 
-#args=c("20151109")
+#args=c("20151110")
 args = commandArgs(TRUE)
 today = args[1]
 
