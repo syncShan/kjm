@@ -1,6 +1,7 @@
 rawTable = "test.stock"
-prodTable = "prod.strategyOne"
+prodTable = "prod.strategyThree"
 transactionTable = "prod.stockInHand"
+expTable = "prod.strategyFour"
 operationTable = "prod.operations"
 yahooSchema = c("Open","High","Low","Close","Volume","Adjusted")
 addedSchema = c("TrueFluc","N","AvgHigh","AvgLow")

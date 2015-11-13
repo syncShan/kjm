@@ -1,4 +1,4 @@
-
+source("r/strategyThree.R")
 #PDC is yesterday close
 trueFluc = function(H,L,PDC){
   return(max(max(H-L,H-PDC),PDC-L))
@@ -12,7 +12,7 @@ calTrueFluc= function(df){
   return(df)
 }
 
-source("r/strategyOne.R")
+
 
 #startDate is string like "20150101"
 toStrategyData = function(df,startDate,endDate){

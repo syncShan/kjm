@@ -6,18 +6,17 @@ source("r/restore.R")
 source("r/calc.R")
 source("r/update.R")
 
-#args=c("20151112")
+#args=c("20151117")
 args = commandArgs(TRUE)
-today = args[1]
+simpToday = args[1]
+today = as.character(as.Date(args[1],"%Y%m%d"),"%Y-%m-%d")
 
 idList=readLines("conf/etf.conf")
-newRaw = read.csv(paste("data/",today,"/data.csv",sep=""))
-newRaw$Date = as.Date(today,"%Y%m%d")
+newRaw = updateRaw(idList, simpToday, simpToday, mongodb)
 newRaw$Adjusted=0
-insertIntoDB(mongodb,rawTable,newRaw)
 newStrategy = updateStrategyData(mongodb,newRaw)
 newStrategy$Adjusted = 0
-latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
+latestDay = getLatestTradingDayBefore(mongodb,prodTable,simpToday)
 latestDay$Adjusted = 0
 getBuyInPoint(idList,newStrategy,latestDay)
 getSellPoint()

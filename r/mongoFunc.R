@@ -75,6 +75,7 @@ insertIntoDB = function(mongodb,table,df){
 
 #market =SH SZ
 #id could be interger or string
+#date is simple
 updateSingleStock = function(id,startDate,endDate,mongodb,tableName){
   if(!mongo.is.connected(mongodb)){
     print("mongo connection is already closed!")

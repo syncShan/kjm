@@ -1,4 +1,4 @@
-minHisDayCount = 80;
+minHisDayCount = 30;
 getStrategySingleDay = function(hisdf, i){
   hisdf = calTrueFluc(hisdf)
   len=nrow(hisdf)
@@ -7,16 +7,9 @@ getStrategySingleDay = function(hisdf, i){
   }
   res = hisdf[i,]
   res$N = mean(hisdf[i-(19:0),"TrueFluc"])
-  res$AvgHigh = mean(hisdf[i-(49:0),"High"])
+  res$AvgHigh = mean(hisdf[i-(24:0),"High"])
   res$AvgLow = mean(hisdf[i-(4:0),"Low"])
   return(res)
-}
-
-getSummary = function(newStrategy){
-  newStrategy$factor = (newStrategy$AvgLow - newStrategy$AvgHigh)/newStrategy$AvgHigh
-  ord = order(newStrategy$factor,decreasing = TRUE)
-  rank = newStrategy[ord,]
-  rank = rank[rank$factor > 0,]
 }
 
 getBuyInPoint = function(idList,newStrategy,lastestDay){
@@ -24,7 +17,7 @@ getBuyInPoint = function(idList,newStrategy,lastestDay){
   ids = as.integer(idList)
   for(id in ids){
     sub = df[df$id==id,]
-   
+    
     if(nrow(sub)<2){
       print(paste("not enough data for id:",id,sep=""))
       print(sub)
@@ -47,12 +40,12 @@ getSellPoint = function(){
   df  = getStockDFFromDB(mongodb,transactionTable,NULL)
   ids = df$id
   for(id in ids){
-    single = tail(getStockDFFromDB(mongodb,prodTable,id),49)
+    single = tail(getStockDFFromDB(mongodb,prodTable,id),24)
     last = tail(single,4)
     val1 = sum(single$High)
     val2 = sum(last$Low)
-    approximateThreshold = single[49,]$AvgHigh * 5 - val2
-    accurateThreshold = val1 - 10*val2
+    approximateThreshold = single[24,]$AvgHigh * 5 - val2
+    accurateThreshold = val1 - 4*val2
     print(paste(id,":approximate sell point: if LOW < ",approximateThreshold," then sell out",sep=""))
     print(paste(id,":accurate sell point: if 10*LOW - HIGH  < ",accurateThreshold," then sell out",sep=""))
   }
@@ -67,7 +60,7 @@ singleAnalysis = function(id,mongodb,startDate,endDate){
 checkPeriodInvest = function(idList,mongodb,startDate,endDate){
   examine = data.frame()
   for(id in idList){
-    new = getStockDFFromDB(mongodb, prodTable, id)
+    new = getStockDFFromDB(mongodb, expTable, id)
     examine = rbind(examine,new)
   }
   historyAnalysis(examine,startDate,endDate)
