@@ -1,6 +1,7 @@
 #reqire 
 source("r/mongoFunc.R")
 source("r/calc.R")
+source("conf/parameter.R")
 restoreSingle = function(id,startDate,endDate,mongodb){
   df = getStockDFFromDB(mongodb,rawTable,id)
   res = toStrategyData(df,startDate,endDate)
@@ -27,3 +28,5 @@ adjustAll = function(idList,startDate,endDate,mongodb){
     adjustStock(id,startDate,endDate,mongodb)
   }
 }
+
+
