@@ -32,6 +32,14 @@ getBuyInPoint = function(idList,newStrategy,lastestDay){
       print(sub)
       insertIntoDB(mongodb,operationTable,sub)
     }
+    if(!sub[2,]$turn && sub[1,]$turn){
+      print(paste("trend end please sell id:",id," with target share:",sub[2,]$share),sep="")
+      sub$operation=""
+      sub[1,]$operation = "pre day"
+      sub[2,]$operation = "sug sell"
+      print(sub)
+      insertIntoDB(mongodb,operationTable,sub)
+    }
     print(sub)
   }
 }

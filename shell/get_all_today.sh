@@ -53,4 +53,5 @@ bash shell/get_single_today.sh $list $date
 echo "id,Open,Close,High,Low,Volume" > data/${date}/data.csv
 awk '{if(length($0)>50) print $0}' rawdata/${date}/data.csv | awk -F',' '{print substr($1,12,8)","$2","$4","$5","$6","$9}' | sed 's/sh//g' | sed 's/sz//g' >> data/${date}/data.csv
 
-R -f r/main.R --args $date
+R -f r/main.R --args $date 
+python python/send_mail.py

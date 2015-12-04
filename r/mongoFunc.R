@@ -136,3 +136,15 @@ removeStockData = function(id,mongodb,tableName){
   criteria <- mongo.bson.from.buffer(buf)
   mongo.remove(mongodb,tableName,criteria)
 }
+
+getAllFromDB=function(mongodb,table){
+    buf <- mongo.bson.buffer.create()
+    query <- mongo.bson.from.buffer(buf)
+    cur <- mongo.find(mongodb, table, query = query)
+    df = mongo.cursor.to.data.frame(cur)
+    if(nrow(df) == 0){ 
+        return()
+    }
+    df$Date  = as.Date(df$Date,format= "%Y-%m-%d")
+    return(df)
+}
