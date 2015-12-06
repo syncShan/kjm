@@ -6,7 +6,7 @@ source("r/restore.R")
 source("r/calc.R")
 source("r/update.R")
 
-#args=c("20151117")
+#args=c("20151127")
 args = commandArgs(TRUE)
 simpToday = args[1]
 today = as.character(as.Date(args[1],"%Y%m%d"),"%Y-%m-%d")

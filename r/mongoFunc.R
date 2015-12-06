@@ -36,7 +36,7 @@ getStockDFFromDBByDate=function(mongodb,table,date){
 
 #date is like 20151103
 getLatestTradingDayBefore=function(mongodb,table,date){
-  i = 10
+  i = 50
   ddt = as.Date(date,"%Y%m%d")
   while(i > 0){
     ddt = ddt - 1

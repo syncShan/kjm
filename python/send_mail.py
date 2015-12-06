@@ -38,10 +38,13 @@ def send_mail(to_list, sub, content):
 
 if __name__ == '__main__':
     mailto_list=["13774221411@163.com"]
-    dateStr = time.strftime("%Y%m%d") 
+    if len(argv) == 0:
+        print "parameter error"
+        sys.exit(1)
+    file = argv[1]
     s = 0.0
     content = ""
-    f = open("log/"+dateStr+".log")
+    f = open(file)
     for line in f:
         content += line+"\n"
     if s <= 10.0:

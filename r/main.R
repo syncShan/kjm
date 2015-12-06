@@ -10,16 +10,42 @@ source("r/update.R")
 args = commandArgs(TRUE)
 today = args[1]
 
+CheckOpenDate = function(newRaw){
+  len = nrow(newRaw)
+  res = data.frame()
+  for(i in 1:len){
+    rec = newRaw[i,]
+    id = rec$id
+    check = getStockDFFromDB(mongodb, rawTable,id)
+    if(nrow(check) == 0) next
+    last = check[nrow(check),]
+    if(rec$Open == last$Open && rec$Close == last$Close && rec$High == last$High){
+      print(paste("the stock:",id, " seems not open today"))
+      next
+    }
+    res = rbind(res,rec)
+  }
+  return(res)
+}
+
 idList=readLines("conf/etf.conf")
 newRaw = read.csv(paste("data/",today,"/data.csv",sep=""))
 newRaw$Date = as.Date(today,"%Y%m%d")
 newRaw$Adjusted=0
-insertIntoDB(mongodb,rawTable,newRaw)
-newStrategy = updateStrategyData(mongodb,newRaw)
-sink(paste("log/",today,".log",sep=""))
-newStrategy$Adjusted = 0
-latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
-latestDay$Adjusted = 0
-getBuyInPoint(idList,newStrategy,latestDay)
-getSellPoint()
-sind()
+fileName = paste("log/",today,".log",sep="")
+
+sink(fileName)
+newRaw = CheckOpenDate(newRaw)
+sink()
+
+if(nrow(newRaw) > 0 ){
+  insertIntoDB(mongodb,rawTable,newRaw)
+  newStrategy = updateStrategyData(mongodb,newRaw)
+  sink(fileName, append = T)
+  newStrategy$Adjusted = 0
+  latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
+  latestDay$Adjusted = 0
+  getBuyInPoint(idList,newStrategy,latestDay)
+  getSellPoint()
+  sink()
+}
