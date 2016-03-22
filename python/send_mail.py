@@ -14,10 +14,10 @@ from email.mime.text import MIMEText
 
 
 def send_mail(to_list, sub, content):  
-    mail_host="smtp.163.com"
-    mail_user="13774221411"
-    mail_pass="lhfqwldeeeeteuem"
-    mail_postfix="163.com"
+    mail_host="smtp.qq.com"
+    mail_user="1034864153"
+    mail_pass="itkwpseljxilbcfe"
+    mail_postfix="qq.com"
     
     me = "sync" + "<" + mail_user + "@" + mail_postfix + ">"
     msg = MIMEText(content, _subtype='plain', _charset='gb2312')
@@ -25,7 +25,7 @@ def send_mail(to_list, sub, content):
     msg['From'] = me
     msg['To'] = ";".join(to_list)
     try:
-        server = smtplib.SMTP()
+        server = smtplib.SMTP_SSL()
         server.connect(mail_host)
         server.login(mail_user,mail_pass)
         server.sendmail(me, to_list, msg.as_string())
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     for line in f:
         content += line+"\n"
     if s <= 10.0:
-        mail_title = "prod:" + dateStr
+        mail_title = "daily report" + dateStr 
         mail_body = content
     
         if send_mail(mailto_list, mail_title, mail_body):
