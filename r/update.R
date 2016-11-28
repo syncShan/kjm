@@ -11,7 +11,7 @@ updateRaw = function(idList,startDate,endDate,mongodb){
 }
 
 
-updateStrategyData = function(mongodb,newRaw){
+updateStrategyData = function(mongodb,newRaw,check){
   len = nrow(newRaw)
   res = data.frame()
   for(i in (1:len)){
@@ -23,7 +23,9 @@ updateStrategyData = function(mongodb,newRaw){
     #in here cannot make sure all the history data is enough
     hisdf = rbind(hisdf,new)
     strategyNew = getStrategySingleDay(hisdf,nrow(hisdf))
-    insertIntoDB(mongodb,prodTable,strategyNew)
+    if(!check){
+      insertIntoDB(mongodb,prodTable,strategyNew)
+    }
     res = rbind(res,strategyNew)
   }
   return(res)

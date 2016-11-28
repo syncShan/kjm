@@ -8,8 +8,12 @@ source("r/update.R")
 
 #args=c("20151112")
 args = commandArgs(TRUE)
+print(args)
 today = args[1]
-
+check = F
+if(length(args) == 2){
+    check = (args[2] == 'Now')
+}
 CheckOpenDate = function(newRaw){
   len = nrow(newRaw)
   res = data.frame()
@@ -39,8 +43,10 @@ newRaw = CheckOpenDate(newRaw)
 sink()
 
 if(nrow(newRaw) > 0 ){
-  insertIntoDB(mongodb,rawTable,newRaw)
-  newStrategy = updateStrategyData(mongodb,newRaw)
+  if(!check){
+    insertIntoDB(mongodb,rawTable,newRaw)
+  }
+  newStrategy = updateStrategyData(mongodb,newRaw,check)
   sink(fileName, append = T)
   newStrategy$Adjusted = 0
   latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
