@@ -1,0 +1,482 @@
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5584 2015-01-06 1.287 1.303 1.275 1.303 117928 510630    0.028 0.0282 1.23652 1.2382    1       buy
+     moneyLeft share profit
+5584  107617.3   709      0
+[1] "buy"
+          Date Open High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+248 2015-01-07 1.21 1.21 1.185 1.195  11394 159928    0.025 0.02815  1.1508 1.1518    1       buy
+    moneyLeft share profit
+248   22772.3   710      0
+[1] "poor buy"
+           Date Open High  Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7723 2015-01-12 1.04 1.04 1.01 1.031  14570 512010     0.03 0.02795 1.02344 1.0262    1  poor buy
+     moneyLeft share profit
+7723      90.3   220      0
+[1] "sell"
+          Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+253 2015-01-14 1.173 1.175 1.155 1.157   5669 159928     0.02 0.02695 1.16352 1.1574    0      sell
+    moneyLeft share profit
+253   82237.3     0  -2698
+[1] "sell"
+           Date Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5590 2015-01-14 1.26 1.262 1.24 1.243  17544 510630    0.022 0.0229 1.25672  1.256    0      sell
+     moneyLeft share profit
+5590    170366     0  -4254
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7014 2015-01-15 1.211 1.215 1.204 1.212 112666 510660    0.011 0.02265 1.19084 1.1912    1       buy
+     moneyLeft share profit
+7014   63346.4   883      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7726 2015-01-15 1.031 1.046 1.025 1.039  17644 512010    0.021 0.02685 1.02672 1.0256    0      sell
+     moneyLeft share profit
+7726   86204.4     0    176
+[1] "poor buy"
+          Date Open High  Low Close Volume     id TrueFluc     N AvgHigh AvgLow turn operation
+970 2015-01-21 1.21 1.23 1.21 1.227  65415 159929    0.023 0.024 1.17864  1.181    1  poor buy
+    moneyLeft share profit
+970        69   702      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7731 2015-01-22 1.049 1.075 1.049 1.066  37132 512010    0.027 0.02515 1.03052 1.0312    1          
+     moneyLeft share profit
+7731         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3673 2015-01-27 1.351 1.388 1.347 1.386   4358 159936    0.041 0.0537 1.29684 1.2984    1          
+     moneyLeft share profit
+3673         0     0      0
+[1] "sell"
+          Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+980 2015-02-04 1.234 1.235 1.207 1.209  20460 159929    0.028 0.0244 1.20996 1.2096    0      sell
+    moneyLeft share  profit
+980   84940.8     0 -1263.6
+[1] "sell"
+           Date  Open High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7029 2015-02-05 1.235 1.24 1.221 1.221  66016 510660    0.019 0.02365 1.23256   1.23    0      sell
+     moneyLeft share profit
+7029  192755.1     0  794.7
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3687 2015-02-16 1.399 1.428 1.388 1.428   1112 159936     0.04 0.0424 1.34808 1.3572    1       buy
+     moneyLeft share profit
+3687  125496.3   471      0
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+5614 2015-02-17 1.296 1.303 1.296 1.297  40345 510630    0.008 0.02185 1.26192  1.264    1       buy
+     moneyLeft share profit
+5614    6820.8   915      0
+[1] "poor buy"
+          Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+278 2015-02-25 1.193 1.193 1.182 1.186  19039 159928    0.011 0.01645  1.1736  1.179    1  poor buy
+    moneyLeft share profit
+278      60.6    57      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4108 2015-02-25 1.106 1.111 1.094 1.106  67310 159938    0.017 0.01765 1.07504 1.0766    1          
+     moneyLeft share profit
+4108         0     0      0
+[1] "cannot buy"
+          Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+991 2015-02-26 1.253 1.253 1.241  1.25  31538 159929    0.012 0.01905 1.22728 1.2296    1          
+    moneyLeft share profit
+991         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7039 2015-02-26 1.267 1.275 1.263 1.271 340832 510660    0.012 0.0173  1.2502  1.252    1          
+     moneyLeft share profit
+7039         0     0      0
+[1] "cannot buy"
+           Date  Open  High  Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7759 2015-03-10 1.086 1.098 1.08 1.092  19072 512010    0.018 0.01935 1.06708 1.0694    1          
+     moneyLeft share profit
+7759         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+1716 2015-03-17 1.104 1.114 1.096 1.113  14272 159930    0.018 0.01955 1.05912  1.064    1          
+     moneyLeft share profit
+1716         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+2426 2015-03-18 1.612 1.641 1.611 1.639  97408 159931    0.035 0.03745 1.54364 1.5642    1          
+     moneyLeft share profit
+2426         0     0      0
+[1] "cannot buy"
+           Date  Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3135 2015-03-18 1.685 1.718 1.68 1.717  79268 159933    0.038 0.0386 1.62232 1.6308    1          
+     moneyLeft share profit
+3135         0     0      0
+[1] "cannot buy"
+           Date Open  High   Low Close  Volume     id TrueFluc     N AvgHigh AvgLow turn operation
+6342 2015-03-18 1.62 1.652 1.617 1.651 1712900 510650    0.043 0.043  1.5464 1.5578    1          
+     moneyLeft share profit
+6342         0     0      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3727 2015-04-21 1.802 1.886 1.802 1.827  12109 159936    0.084 0.0725 1.78744 1.7762    0      sell
+     moneyLeft share  profit
+3727   86112.3     0 18792.9
+[1] "buy"
+           Date Open High   Low Close Volume     id TrueFluc     N AvgHigh AvgLow turn operation
+3729 2015-04-23 1.93 1.98 1.881  1.97   1837 159936    0.099 0.079 1.81136  1.818    1       buy
+     moneyLeft share profit
+3729   36271.3   253      0
+[1] "poor buy"
+           Date Open High Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+4573 2015-04-30  1.5 1.56 1.5 1.534 163172 159939    0.072 0.0578  1.4578  1.461    1  poor buy
+     moneyLeft share profit
+4573      68.9   236      0
+[1] "sell"
+           Date  Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3737 2015-05-06 1.907 1.91 1.847 1.847   1298 159936    0.063 0.1073  1.9166 1.8906    0      sell
+     moneyLeft share  profit
+3737     46798     0 -3111.9
+[1] "sell"
+          Date Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+327 2015-05-07 1.48 1.537 1.48 1.504  15450 159928    0.057 0.0625 1.55596 1.5376    0      sell
+    moneyLeft share profit
+327   55370.8     0 1812.6
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5664 2015-05-07 1.628 1.678 1.628  1.65  27292 510630     0.05 0.0689 1.69844 1.6804    0      sell
+     moneyLeft share  profit
+5664  206345.8     0 32299.5
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4161 2015-05-13 1.613 1.618 1.552 1.603  18218 159938    0.066 0.05305 1.49808 1.5014    1       buy
+     moneyLeft share profit
+4161  145912.7   377      0
+[1] "buy"
+           Date Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+1045 2015-05-15 1.71 1.725 1.692 1.709  33327 159929    0.047 0.05055   1.683 1.6916    1       buy
+     moneyLeft share profit
+1045   78407.2   395      0
+[1] "buy"
+           Date  Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3744 2015-05-15 2.045 2.067 1.97 2.067   1594 159936    0.097 0.1029  1.9682 1.9804    1       buy
+     moneyLeft share profit
+3744   38307.4   194      0
+[1] "poor buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7093 2015-05-15 1.778 1.778 1.729  1.74  71318 510660    0.049 0.0568 1.73056 1.7308    1  poor buy
+     moneyLeft share profit
+7093      27.4   220      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7809 2015-05-21 1.438 1.491 1.438  1.49  17033 512010    0.053 0.04845 1.36284  1.369    1          
+     moneyLeft share profit
+7809         0     0      0
+[1] "cannot buy"
+          Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+338 2015-05-22 1.701 1.741 1.701  1.74  12717 159928     0.04 0.05245   1.622 1.6268    1          
+    moneyLeft share profit
+338         0     0      0
+[1] "cannot buy"
+           Date  Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5676 2015-05-25 1.857 1.98 1.857 1.975  90211 510630    0.123 0.0594 1.77648 1.7944    1          
+     moneyLeft share profit
+5676         0     0      0
+[1] "cannot buy"
+           Date  Open  High  Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4967 2015-05-28 1.051 1.059 0.99 0.991 151520 159940    0.069 0.02935 1.01592 1.0168    1          
+     moneyLeft share profit
+4967         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+1772 2015-06-05 1.498 1.544 1.498 1.518  21320 159930    0.051 0.0556 1.40608 1.4246    1          
+     moneyLeft share profit
+1772         0     0      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc     N AvgHigh AvgLow turn operation
+4179 2015-06-08 1.988 1.988 1.918 1.935  82849 159938     0.07 0.171 1.94668 1.9412    0      sell
+     moneyLeft share  profit
+4179   72976.9     0 12516.4
+[1] "buy"
+           Date  Open High   Low Close Volume     id TrueFluc     N AvgHigh AvgLow turn operation
+4974 2015-06-08 1.061 1.11 1.061 1.109 198927 159940    0.049 0.037 1.02556 1.0282    1       buy
+     moneyLeft share profit
+4974   13090.9   540      0
+[1] "poor buy"
+           Date  Open High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+2483 2015-06-09 2.136 2.17 2.088  2.12 157870 159931    0.082 0.07865 1.94128 1.9526    1  poor buy
+     moneyLeft share profit
+2483     158.9    61      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+4600 2015-06-09 2.138 2.305 2.111  2.27 470903 159939    0.194 0.2447 2.26992 2.2244    0      sell
+     moneyLeft share  profit
+4600   53730.9     0 17369.6
+[1] "poor buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3193 2015-06-10 2.078 2.097 2.061 2.076  16659 159933    0.038 0.0701 1.99568  2.007    1  poor buy
+     moneyLeft share profit
+3193     170.1   258      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+6400 2015-06-10 1.953 1.999 1.944 1.971 912720 510650    0.055 0.07135 1.90528 1.9072    1          
+     moneyLeft share profit
+6400         0     0      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+2489 2015-06-17 1.988 2.035 1.936 1.975  41351 159931    0.099 0.08295 1.98336 1.9796    0      sell
+     moneyLeft share profit
+2489   12217.6     0 -884.5
+[1] "sell"
+           Date Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+3198 2015-06-17 1.99 2.016 1.965 2.014  17554 159933    0.051 0.06775 2.01596 2.0096    0      sell
+     moneyLeft share  profit
+3198   64178.8     0 -1599.6
+[1] "sell"
+           Date Open High   Low Close Volume     id TrueFluc    N AvgHigh AvgLow turn operation
+4982 2015-06-18 1.06 1.06 1.016 1.016  31920 159940    0.044 0.04 1.05388 1.0474    0      sell
+     moneyLeft share profit
+4982  119042.8     0  -5022
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+1070 2015-06-19 1.987 1.987 1.838  1.86  40675 159929    0.149 0.0948 2.03596  1.975    0      sell
+     moneyLeft share profit
+1070  192512.8     0 5964.5
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7118 2015-06-19 1.975 1.975 1.856 1.875 664146 510660    0.119 0.0741 2.03764  1.984    0      sell
+     moneyLeft share profit
+7118  233762.8     0   2970
+[1] "sell"
+           Date  Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3770 2015-06-23 2.301 2.53 2.206  2.47   1060 159936    0.324 0.1651  2.4852 2.4046    0      sell
+     moneyLeft share profit
+3770  281680.8     0 7818.2
+[1] "buy"
+           Date Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3807 2015-08-13 1.94 1.94 1.851 1.878    270 159936    0.089 0.0864 1.81456  1.824    1       buy
+     moneyLeft share profit
+3807    238299   231      0
+[1] "buy"
+           Date  Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5735 2015-08-17 1.744 1.794 1.74 1.763  95163 510630    0.054 0.0822 1.70708 1.7126    1       buy
+     moneyLeft share profit
+5735  195458.1   243      0
+[1] "sell"
+           Date  Open  High  Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+5737 2015-08-19 1.646 1.715 1.56 1.703 207811 510630    0.155 0.08725 1.70924 1.6816    0      sell
+     moneyLeft share profit
+5737    236841     0  -1458
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3814 2015-08-24 1.608 1.609 1.558  1.56    262 159936    0.171 0.0867 1.83796 1.7796    0      sell
+     moneyLeft share  profit
+3814    272877     0 -7345.8
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+4262 2015-10-13 1.298 1.298 1.271 1.295  12005 159938    0.029 0.0412 1.21332 1.2274    1       buy
+     moneyLeft share profit
+4262  210069.5   485      0
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4682 2015-10-13 1.162 1.184 1.145 1.177 111203 159939    0.039 0.04905 1.07148 1.0864    1       buy
+     moneyLeft share profit
+4682  162165.6   407      0
+[1] "buy"
+           Date Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7192 2015-10-13 1.47 1.478 1.454 1.475  18450 510660    0.031 0.0492 1.41388 1.4188    1       buy
+     moneyLeft share profit
+7192  102280.6   406      0
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+1145 2015-10-14 1.443 1.444 1.423 1.425   9681 159929    0.027 0.05085 1.39788 1.4044    1       buy
+     moneyLeft share profit
+1145   46278.1   393      0
+[1] "poor buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+6482 2015-10-14 1.385 1.389 1.377 1.377   3370 510650    0.012 0.03465 1.36104 1.3616    1  poor buy
+     moneyLeft share profit
+6482      10.9   336      0
+[1] "cannot buy"
+           Date Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7905 2015-10-14 1.17 1.176 1.152 1.165   4544 512010    0.024 0.0414  1.1442 1.1458    1          
+     moneyLeft share profit
+7905         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+5771 2015-10-15 1.462 1.512 1.462 1.508   6062 510630     0.05 0.03795 1.45016 1.4562    1          
+     moneyLeft share profit
+5771         0     0      0
+[1] "cannot buy"
+          Date Open  High Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+435 2015-10-16  1.3 1.347 1.3  1.34   3264 159928    0.047 0.0374  1.2868 1.2934    1          
+    moneyLeft share profit
+435         0     0      0
+[1] "cannot buy"
+           Date Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+2568 2015-10-16 1.39 1.418 1.39 1.418  11754 159931    0.028 0.0432 1.35364  1.358    1          
+     moneyLeft share profit
+2568         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3846 2015-10-16 1.543 1.592 1.543  1.55     95 159936    0.049 0.0802 1.52684 1.5302    1          
+     moneyLeft share profit
+3846         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+5060 2015-10-16 0.732 0.745 0.732 0.736   9043 159940    0.013 0.01975  0.7122 0.7146    1          
+     moneyLeft share profit
+5060         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+3280 2015-10-21 1.445 1.485 1.445 1.459   1374 159933     0.04 0.05935  1.4196  1.421    1          
+     moneyLeft share profit
+3280         0     0      0
+[1] "cannot buy"
+          Date Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+443 2015-10-28 1.33 1.345 1.317 1.318   4408 159928    0.028 0.04075 1.30156 1.3024    1          
+    moneyLeft share profit
+443         0     0      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+6496 2015-11-03 1.399 1.405 1.393 1.393    522 510650    0.012 0.0261 1.39672 1.3958    0      sell
+     moneyLeft share profit
+6496   46815.7     0  537.6
+[1] "poor buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+3291 2015-11-05 1.543 1.625 1.543 1.591   7010 159933    0.107 0.05445 1.45908 1.4654    1  poor buy
+     moneyLeft share profit
+3291      40.3   294      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+6498 2015-11-05 1.463 1.555 1.463  1.51  25260 510650    0.092 0.03065 1.40984 1.4118    1          
+     moneyLeft share profit
+6498         0     0      0
+[1] "cannot buy"
+           Date Open  High Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5075 2015-11-06 0.83 0.845 0.8  0.83  15844 159940    0.045 0.0279 0.75068  0.751    1          
+     moneyLeft share profit
+5075         0     0      0
+[1] "cannot buy"
+           Date Open  High Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+2584 2015-11-09  1.6 1.736 1.6 1.607  29997 159931    0.157 0.06115 1.44448 1.4756    1          
+     moneyLeft share profit
+2584         0     0      0
+[1] "cannot buy"
+           Date  Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3862 2015-11-09 1.698 1.72 1.658  1.72    423 159936    0.062 0.0534 1.60272 1.6084    1          
+     moneyLeft share profit
+3862         0     0      0
+[1] "sell"
+           Date  Open  High Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4288 2015-11-18 1.423 1.423 1.4 1.402   8259 159938    0.023 0.04675   1.404 1.4036    0      sell
+     moneyLeft share profit
+4288   68037.3     0 5189.5
+[1] "sell"
+           Date Open  High  Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+1171 2015-11-19 1.53 1.564 1.53  1.56  11365 159929    0.034 0.0421 1.54136 1.5324    0      sell
+     moneyLeft share profit
+1171  129345.3     0 5305.5
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7221 2015-11-23 1.627 1.627 1.601 1.604  13909 510660    0.026 0.0366   1.605 1.6046    0      sell
+     moneyLeft share profit
+7221  194467.7     0 5237.4
+[1] "buy"
+           Date  Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5089 2015-11-26 0.835 0.84 0.828 0.828  19395 159940    0.013 0.0311  0.8148  0.818    1       buy
+     moneyLeft share profit
+5089  141227.3   643      0
+[1] "sell"
+           Date  Open High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+3307 2015-11-27 1.606 1.61 1.532  1.54    798 159933    0.085 0.05115  1.5904  1.589    0      sell
+     moneyLeft share  profit
+3307  186503.3     0 -1499.4
+[1] "sell"
+           Date  Open High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+5090 2015-11-27 0.818 0.83 0.784 0.799   3846 159940    0.046 0.03135 0.81764 0.8118    0      sell
+     moneyLeft share  profit
+5090    237879     0 -1864.7
+[1] "sell"
+           Date Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4717 2015-12-01 1.38 1.388 1.355 1.372  56765 159939    0.033 0.05655 1.38756 1.3818    0      sell
+     moneyLeft share profit
+4717  293719.4     0 7936.5
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+3892 2015-12-21 1.765 1.822 1.765 1.798   1464 159936    0.057 0.05825 1.73576 1.7368    1       buy
+     moneyLeft share profit
+3892    232048   343      0
+[1] "buy"
+           Date  Open  High  Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4731 2015-12-21 1.451 1.458 1.44 1.452  34215 159939    0.018 0.03885 1.42476 1.4254    1       buy
+     moneyLeft share profit
+4731  157415.2   514      0
+[1] "buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+7241 2015-12-21 1.663 1.727 1.663 1.721  20095 510660    0.064 0.0337 1.62416 1.6336    1       buy
+     moneyLeft share profit
+7241   55359.9   593      0
+[1] "poor buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+7953 2015-12-21 1.291 1.355 1.291 1.355   8147 512010    0.065 0.03115 1.27816   1.28    1  poor buy
+     moneyLeft share profit
+7953      75.9   408      0
+[1] "cannot buy"
+           Date Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+1194 2015-12-22 1.64 1.673 1.629 1.644  10737 159929    0.044 0.03805 1.56168 1.5728    1          
+     moneyLeft share profit
+1194         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+3324 2015-12-22 1.715 1.715 1.666 1.711   1087 159933    0.049 0.0498 1.63784 1.6396    1          
+     moneyLeft share profit
+3324         0     0      0
+[1] "cannot buy"
+           Date Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4312 2015-12-22 1.49 1.495 1.465 1.484  12239 159938     0.03 0.03535 1.43292 1.4368    1          
+     moneyLeft share profit
+4312         0     0      0
+[1] "cannot buy"
+          Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+483 2015-12-23 1.482 1.482 1.466 1.466   1526 159928    0.018 0.0392 1.40052 1.4112    1          
+    moneyLeft share profit
+483         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+2616 2015-12-23 1.673 1.699 1.652 1.668   4757 159931    0.047 0.05115  1.5974 1.6064    1          
+     moneyLeft share profit
+2616         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+5108 2015-12-23 0.872 0.905 0.868 0.884  23980 159940    0.037 0.0252 0.83932 0.8434    1          
+     moneyLeft share profit
+5108         0     0      0
+[1] "cannot buy"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+5820 2015-12-23 1.634 1.645 1.618 1.618    997 510630    0.027 0.03055 1.56584 1.5724    1          
+     moneyLeft share profit
+5820         0     0      0
+[1] "cannot buy"
+           Date  Open High   Low Close Volume     id TrueFluc      N AvgHigh AvgLow turn operation
+6532 2015-12-23 1.596 1.64 1.596 1.608  21687 510650    0.046 0.0411 1.54568  1.553    1          
+     moneyLeft share profit
+6532         0     0      0
+[1] "sell"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4736 2015-12-28 1.455 1.468 1.426 1.428  47577 159939    0.042 0.02955 1.43152 1.4308    0      sell
+     moneyLeft share  profit
+4736   73475.1     0 -1233.6
+[1] "poor buy"
+           Date Open High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+4739 2015-12-31 1.47 1.47 1.441 1.443  33505 159939    0.029 0.02705 1.43012  1.432    1  poor buy
+     moneyLeft share profit
+4739      26.4   509      0
+[1] "stockInHand:"
+           Date  Open  High   Low Close Volume     id TrueFluc       N AvgHigh AvgLow turn operation
+3892 2015-12-21 1.765 1.822 1.765 1.798   1464 159936    0.057 0.05825 1.73576 1.7368    1       buy
+7241 2015-12-21 1.663 1.727 1.663 1.721  20095 510660    0.064 0.03370 1.62416 1.6336    1       buy
+7953 2015-12-21 1.291 1.355 1.291 1.355   8147 512010    0.065 0.03115 1.27816 1.2800    1  poor buy
+4739 2015-12-31 1.470 1.470 1.441 1.443  33505 159939    0.029 0.02705 1.43012 1.4320    1  poor buy
+     moneyLeft share profit
+3892  232048.0   343      0
+7241   55359.9   593      0
+7953      75.9   408      0
+4739      26.4   509      0
+[1] 291344.9
