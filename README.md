@@ -9,6 +9,6 @@ db.strategyOne.createIndex({id:1,Date:1},{ unique: true } )
 
 commands:
 regular run: bash -x shell/get_all_today.sh 20151113
-repair data: R -f r/repair.R --args 20151117 
+repair data: bash -x shell/get_repair.sh 2017-08-23
 
 repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN"

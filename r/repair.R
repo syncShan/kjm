@@ -15,20 +15,16 @@ idList=readLines("conf/etf.conf")
 newRaw = read.csv(paste("rawdata/repair/merge",sep=""))
 newRaw$Date = as.Date(today,"%Y%m%d")
 newRaw$Adjusted=0
-fileName = paste("log/",today,".log",sep="")
 
-sink(fileName)
-
+check=F
 if(nrow(newRaw) > 0 ){
   if(!check){
     insertIntoDB(mongodb,rawTable,newRaw)
   }
   newStrategy = updateStrategyData(mongodb,newRaw,check)
-  sink(fileName, append = T)
   newStrategy$Adjusted = 0
   latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
   latestDay$Adjusted = 0
   getBuyInPoint(idList,newStrategy,latestDay)
   getSellPoint()
-  sink()
 }

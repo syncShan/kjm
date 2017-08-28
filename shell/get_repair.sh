@@ -19,8 +19,8 @@ do
     fi
     echo "downloading today data:$line"
     bash shell/get_single_repair.sh $line.$select 
-done < conf/etf.cona
-grep $date ./rawdata/repair/*.csv | sed 's/rawdata\/repair\///g' | sed 's/\.S.\.csv//g' | sed 's/:/,/g' | awk -F',' 'BEGIN{print "id,Open,Close,High,Low,Volume"}{print $1","$3","$6","$4","$5","$8}' > rawdata/repair/merge
+done < conf/etf.conf
+grep $date rawdata/repair/*.csv | sed 's/rawdata\/repair\///g' | sed 's/\.S.\.csv//g' | sed 's/:/,/g' | awk -F',' 'BEGIN{print "id,Open,Close,High,Low,Volume"}{print $1","$3","$6","$4","$5","$8}' > rawdata/repair/merge
 
 R -f r/repair.R --args $date
 
