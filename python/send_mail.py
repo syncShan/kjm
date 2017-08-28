@@ -16,7 +16,7 @@ from email.mime.text import MIMEText
 def send_mail(to_list, sub, content):  
     mail_host="smtp.qq.com"
     mail_user="1034864153"
-    mail_pass="itkwpseljxilbcfe"
+    mail_pass="ttlysjftxqxsbbdi"
     mail_postfix="qq.com"
     
     me = "sync" + "<" + mail_user + "@" + mail_postfix + ">"
