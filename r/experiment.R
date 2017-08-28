@@ -21,5 +21,9 @@ endDate = "20141231"
 checkPeriodInvest(idList,mongodb,startDate,endDate)
 
 startDate = "20150101"
-endDate = "20151010"
-checkPeriodInvest(idList[-7],mongodb,startDate,endDate)
+endDate = "20151231"
+checkPeriodInvest(idList,mongodb,startDate,endDate)
+
+startDate = "20160101"
+endDate = "20161101"
+checkPeriodInvest(idList,mongodb,startDate,endDate)

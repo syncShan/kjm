@@ -1,8 +1,8 @@
-minHisDayCount = 30;
+minHisDayCount = 25;
 getStrategySingleDay = function(hisdf, i){
   hisdf = calTrueFluc(hisdf)
   len=nrow(hisdf)
-  if(i < 51){
+  if(i < minHisDayCount){
     return()
   }
   res = hisdf[i,]
@@ -69,6 +69,7 @@ checkPeriodInvest = function(idList,mongodb,startDate,endDate){
   examine = data.frame()
   for(id in idList){
     new = getStockDFFromDB(mongodb, expTable, id)
+    new$Adjusted = 0
     examine = rbind(examine,new)
   }
   historyAnalysis(examine,startDate,endDate)
@@ -143,6 +144,7 @@ historyAnalysis = function(df,startDate,endDate){
     print("do not got stock in hand")
     return()
   }
+  print("stockInHand:")
   print(stockInHand)
   for( i in 1:nrow(stockInHand)){
     id = stockInHand[i,"id"]
@@ -154,7 +156,7 @@ historyAnalysis = function(df,startDate,endDate){
     singleValue = today[which(today$id == id),"Close"]*stockInHand[i,"share"]*100
     marketValue = marketValue + singleValue
   }
-  print(marketValue)
+  print(marketValue+moneyLeft)
 }
 
 getPlot = function(df){

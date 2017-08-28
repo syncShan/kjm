@@ -18,7 +18,7 @@ calTrueFluc= function(df){
 toStrategyData = function(df,startDate,endDate){
   sDate = as.Date(startDate,"%Y%m%d")
   eDate = as.Date(endDate,"%Y%m%d")
-  sub = subset(df,df$Date >= sDate  - minHisDayCount & df$Date <= eDate)
+  sub = subset(df,df$Date >= sDate  - 40 & df$Date <= eDate)
   i = which(sub$Date >sDate)[1]
   len = nrow(sub)
   res = data.frame()
