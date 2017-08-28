@@ -6,17 +6,29 @@ source("r/restore.R")
 source("r/calc.R")
 source("r/update.R")
 
-#args=c("20151127")
+#args=c("2015-11-12")
 args = commandArgs(TRUE)
-simpToday = args[1]
-today = as.character(as.Date(args[1],"%Y%m%d"),"%Y-%m-%d")
+print(args)
+today = as.character(as.Date(args[1],"%Y-%m-%d"),format="%Y%m%d")
 
 idList=readLines("conf/etf.conf")
-newRaw = updateRaw(idList, simpToday, simpToday, mongodb)
+newRaw = read.csv(paste("rawdata/repair/merge",sep=""))
+newRaw$Date = as.Date(today,"%Y%m%d")
 newRaw$Adjusted=0
-newStrategy = updateStrategyData(mongodb,newRaw,F)
-newStrategy$Adjusted = 0
-latestDay = getLatestTradingDayBefore(mongodb,prodTable,simpToday)
-latestDay$Adjusted = 0
-getBuyInPoint(idList,newStrategy,latestDay)
-getSellPoint()
+fileName = paste("log/",today,".log",sep="")
+
+sink(fileName)
+
+if(nrow(newRaw) > 0 ){
+  if(!check){
+    insertIntoDB(mongodb,rawTable,newRaw)
+  }
+  newStrategy = updateStrategyData(mongodb,newRaw,check)
+  sink(fileName, append = T)
+  newStrategy$Adjusted = 0
+  latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
+  latestDay$Adjusted = 0
+  getBuyInPoint(idList,newStrategy,latestDay)
+  getSellPoint()
+  sink()
+}
