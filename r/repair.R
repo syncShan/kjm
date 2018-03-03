@@ -22,6 +22,8 @@ if(nrow(newRaw) > 0 ){
     insertIntoDB(mongodb,rawTable,newRaw)
   }
   newStrategy = updateStrategyData(mongodb,newRaw,check)
+#  if change to a new db, switch to the repair
+#  newStrategy = repairStrategyData(mongodb,newRaw,check)
   newStrategy$Adjusted = 0
   latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
   latestDay$Adjusted = 0

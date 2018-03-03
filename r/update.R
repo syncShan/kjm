@@ -30,3 +30,24 @@ updateStrategyData = function(mongodb,newRaw,check){
   }
   return(res)
 }
+
+repairStrategyData = function(mongodb,newRaw,check){
+  len = nrow(newRaw)
+  res = data.frame()
+  for(i in (1:len)){
+    hisdf = getStockDFFromDB(mongodb,rawTable,newRaw[i,]$id)
+    new = newRaw[i,]
+    hisdf[,addedSchema]=NA
+    new[,addedSchema]=NA
+    new[,"Adjusted"]=0
+    hisdf[,"Adjusted"]=0
+    #in here cannot make sure all the history data is enough
+    hisdf = rbind(hisdf,new)
+    strategyNew = getStrategySingleDay(hisdf,nrow(hisdf))
+    if(!check){
+      insertIntoDB(mongodb,prodTable,strategyNew)
+    }
+    res = rbind(res,strategyNew)
+  }
+  return(res)
+}

@@ -52,6 +52,6 @@ if(nrow(newRaw) > 0 ){
   latestDay = getLatestTradingDayBefore(mongodb,prodTable,today)
   latestDay$Adjusted = 0
   getBuyInPoint(idList,newStrategy,latestDay)
-  getSellPoint()
+  #getSellPoint()
   sink()
 }

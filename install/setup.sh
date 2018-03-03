@@ -4,3 +4,4 @@
 #sudo apt-get istall r-base-core
 mkdir data
 mkdir rawdata
+mkdir log
